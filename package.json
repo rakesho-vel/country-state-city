@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "postinstall": "npm run build"
   },
   "author": "harpreetkhalsagtbit@gmail.com",
   "license": "GPL-3.0",
