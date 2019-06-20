@@ -1,5 +1,5 @@
-country-state-city
-==============================
+# country-state-city
+
 Basic library for Country, State and City
 
 Data taken from:
@@ -7,46 +7,47 @@ Data taken from:
 https://github.com/hiiamrohit/Countries-States-Cities-database
 
 # Install
+
 `npm i country-state-city`
 
 # Usage
 
 ## Latest Release : `v1.0.0` (First Major Version Release - Not backward compatible)
-  - ES6 Module usage
-   
-     ```js
-     import csc from 'country-state-city'
 
-     // Import Interfaces`
-     import { ICountry, IState, ICity } from 'country-state-city'
-     ```
-  - AMD Module usage
-  
-    ```js
-    let csc = require('country-state-city').default
-    ```
+- ES6 Module usage
 
+  ```js
+  import csc from "country-state-city";
+
+  // Import Interfaces`
+  import { ICountry, IState, ICity } from "country-state-city";
+  ```
+
+- AMD Module usage
+
+  ```js
+  let csc = require("country-state-city").default;
+  ```
 
 ## For versions `v0.1.8 and below`
 
-  - ES6 Module usage
-   
-     ```js
-     import csc from 'country-state-city'
-     ```
+- ES6 Module usage
 
-  - AMD Module usage
-  
-    ```js
-    let csc = require('country-state-city')
-    ```
+  ```js
+  import csc from "country-state-city";
+  ```
+
+- AMD Module usage
+
+  ```js
+  let csc = require("country-state-city");
+  ```
 
 # Docs
 
-getCountryById(id)
----------------
+## getCountryById(id)
 
-It accepts a valid `CountryId` and   returns *Country Details*
+It accepts a valid `CountryId` and returns _Country Details_
 
 type: **json | ICountry**
 
@@ -59,10 +60,9 @@ type: **json | ICountry**
 }
 ```
 
-getStateById(id)
----------------
+## getStateById(id)
 
-It accepts a valid `StateId` and   returns *State Details*
+It accepts a valid `StateId` and returns _State Details_
 
 type: **json | IState**
 
@@ -74,58 +74,24 @@ type: **json | IState**
 }
 ```
 
-getCityById(id)
----------------
+## getStatesOfCountry(countryId)
 
-It accepts a valid `CityId` and   returns *City Details*
-
-type: **json | ICity**
-
-```js
-{
-	"id": "3",
-	"name": "Port Blair",
-	"state_id": "1"
-}
-```
-
-getStatesOfCountry(countryId)
----------------
-
-It accepts a valid `CountryId` and   returns *all States* as Array of JSON
+It accepts a valid `CountryId` and returns _all States_ as Array of JSON
 
 type: **array of json | IState**
 
 ```js
 [
   {
-    "id": 4119,
-    "name": "Midlands",
-    "country_id": "246"
-  }
-]
-
-```
-getCitiesOfState(stateId)
----------------
-
-It accepts a valid `CityId` and   returns *all Cities* as Array of JSON
-
-type: **array of json | ICity**
-
-```js
-[
-  {
-    "id": "3",
-    "name": "Port Blair",
-    "state_id": "1"
-  }
-]
-
+    id: 4119,
+    name: "Midlands",
+    country_id: "246",
+  },
+];
 ```
 
-getAllCountries
----------------
+## getAllCountries
+
 It returns **all Countries**
 
 type: **array of json | ICountry**
@@ -133,21 +99,19 @@ type: **array of json | ICountry**
 ```js
 [
   {
-    "id": "4",
-    "sortname": "AS",
-    "name": "American Samoa",
-    "phonecode": "1684"
-  }
-]
+    id: "4",
+    sortname: "AS",
+    name: "American Samoa",
+    phonecode: "1684",
+  },
+];
 ```
 
-Special Thanks
----------------
+## Special Thanks
 
 [@baywet](https://github.com/baywet) - For mentoring Javascript to Typescript Conversion
 
-Change Logs
----------------
+## Change Logs
 
 **v1.0.0**
 
@@ -160,9 +124,11 @@ Change Logs
 7. Common Test Cases are being shared between AMD and ES6 modules test files.
 
 **v0.1.8**
+
 1. Development code - Javascript to Typescript conversion: [#12](https://github.com/harpreetkhalsagtbit/country-state-city/pull/12)
 
 **v0.1.0**
+
 1. Fix: [#2](https://github.com/harpreetkhalsagtbit/country-state-city/issues/2)
 2. Fix: [#3](https://github.com/harpreetkhalsagtbit/country-state-city/issues/3)
 3. Added some missing states and cities for Canada and US
