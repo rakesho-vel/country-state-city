@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && cp -r lib/ dist/lib/",
     "postinstall": "npm run build"
   },
   "author": "harpreetkhalsagtbit@gmail.com",
@@ -21,7 +21,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "",
-      "pre-push": "npm build"
+      "pre-push": ""
     }
   },
   "keywords": [
