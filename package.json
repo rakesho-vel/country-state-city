@@ -7,8 +7,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json && cp -r lib/ dist/lib/",
-    "clean": "rm -rf node_modules/",
-    "postinstall": "npm install && npm run build && npm run clean"
+    "postinstall": ""
   },
   "author": "harpreetkhalsagtbit@gmail.com",
   "license": "GPL-3.0",
@@ -21,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "",
+      "pre-commit": "npm run build",
       "pre-push": ""
     }
   },
