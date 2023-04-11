@@ -1,9 +1,22 @@
-export interface ICountry {
-    id: string;
+export interface Timezones {
+    zoneName: string;
+    gmtOffset: number;
+    gmtOffsetName: string;
+    abbreviation: string;
+    tzName: string;
+  }
+  export interface ICountry {
     name: string;
     phonecode: string;
-    sortname: string;
-}
+    isoCode: string;
+    flag: string;
+    currency: string;
+    latitude: string;
+    longitude: string;
+    timezones?: Timezones[];
+    getAllCountries?(): ICountry[];
+    getCountryByCode?(): ICountry;
+  }
 
 export interface IState {
     id: string;

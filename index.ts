@@ -1,7 +1,7 @@
 import countryList from "./lib/country.json";
 import stateList from "./lib/state.json";
 import { ICountry, ICity, IState } from "./src/interface";
-// import cityList from "./lib/city.json";
+import cityList from "./lib/city.json";
 
 export { ICountry, ICity, IState } from "./src/interface";
 
@@ -23,26 +23,26 @@ const _compare = (a: any, b: any) => {
 };
 
 export default {
-  getCountryById: function(id: string): ICountry {
+  getCountryById: function (id: string): ICountry {
     return _findEntry(countryList, id);
   },
-  getStateById: function(id: string): IState {
+  getStateById: function (id: string): IState {
     return _findEntry(stateList, id);
   },
-  //   getCityById: function(id: string): ICity {
-  //     return _findEntry(cityList, id);
-  //   },
-  getStatesOfCountry: function(countryId: string): IState[] {
+  getCityById: function (id: string): ICity {
+    return _findEntry(cityList, id);
+  },
+  getStatesOfCountry: function (countryId: string): IState[] {
     const states = stateList.filter((value) => value.country_id === countryId);
 
     return states.sort(_compare);
   },
-  //   getCitiesOfState: function(stateId: string): ICity[] {
-  //     const cities = cityList.filter((value) => value.state_id === stateId);
+  getCitiesOfState: function (stateId: string): ICity[] {
+    const cities = cityList.filter((value) => value.state_id === stateId);
 
-  //     return cities.sort(_compare);
-  //   },
-  getAllCountries: function(): ICountry[] {
+    return cities.sort(_compare);
+  },
+  getAllCountries: function (): ICountry[] {
     return countryList;
   },
 };
