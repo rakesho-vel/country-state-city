@@ -39,11 +39,11 @@ export default {
 
     return states.sort(_compare);
   },
-  getCitiesOfState: function (stateCode: string): ICity[] {
-    const cities = cityList.filter((value) => value.stateCode === stateCode);
+  // getCitiesOfState: function (stateCode: string): ICity[] {
+  //   const cities = cityList.filter((value) => value.stateCode === stateCode);
 
-    return cities.sort(_compare);
-  },
+  //   return cities.sort(_compare);
+  // },
   getAllCountries: function (): ICountry[] {
     return countryList;
   },
