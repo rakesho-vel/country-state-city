@@ -19,12 +19,22 @@ export interface ICountry {
 }
 
 export interface IState {
-  id: string;
   name: string;
-  country_id: string;
+  isoCode: string;
+  countryCode: string;
+  latitude?: string | null;
+  longitude?: string | null;
+  getStatesOfCountry?(): IState[];
+  getStateByCodeAndCountry?(): IState;
+  getStateByCode?(): IState;
 }
 export interface ICity {
-  id: string;
   name: string;
-  state_id: string;
+  countryCode: string;
+  stateCode: string;
+  latitude?: string | null;
+  longitude?: string | null;
+  getAllCities?(): ICity[];
+  getCitiesOfState?(): ICity[];
+  getCitiesOfCountry?(): ICity[];
 }

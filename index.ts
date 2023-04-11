@@ -7,7 +7,7 @@ export { ICountry, ICity, IState } from "./src/interface";
 
 const _findEntry = (source: any[], id: string) => {
   if (id && source != null) {
-    const idx = source.findIndex((c: any) => c.id === id);
+    const idx = source.findIndex((c: any) => c.isoCode === id);
 
     return idx !== -1 ? source[idx] : "";
   }
@@ -29,16 +29,18 @@ export default {
   getStateById: function (id: string): IState {
     return _findEntry(stateList, id);
   },
-  getCityById: function (id: string): ICity {
-    return _findEntry(cityList, id);
-  },
-  getStatesOfCountry: function (countryId: string): IState[] {
-    const states = stateList.filter((value) => value.country_id === countryId);
+  // getCityById: function (id: string): ICity {
+  //   return _findEntry(cityList, id);
+  // },
+  getStatesOfCountry: function (countryCode: string): IState[] {
+    const states = stateList.filter(
+      (value) => value.countryCode === countryCode
+    );
 
     return states.sort(_compare);
   },
-  getCitiesOfState: function (stateId: string): ICity[] {
-    const cities = cityList.filter((value) => value.state_id === stateId);
+  getCitiesOfState: function (stateCode: string): ICity[] {
+    const cities = cityList.filter((value) => value.stateCode === stateCode);
 
     return cities.sort(_compare);
   },
