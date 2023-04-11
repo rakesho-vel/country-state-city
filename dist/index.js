@@ -8,7 +8,7 @@ var state_json_1 = __importDefault(require("./lib/state.json"));
 var city_json_1 = __importDefault(require("./lib/city.json"));
 var _findEntry = function (source, id) {
     if (id && source != null) {
-        var idx = source.findIndex(function (c) { return c.id === id; });
+        var idx = source.findIndex(function (c) { return c.isoCode === id; });
         return idx !== -1 ? source[idx] : "";
     }
     return "";
@@ -27,15 +27,15 @@ exports.default = {
     getStateById: function (id) {
         return _findEntry(state_json_1.default, id);
     },
-    getCityById: function (id) {
-        return _findEntry(city_json_1.default, id);
-    },
-    getStatesOfCountry: function (countryId) {
-        var states = state_json_1.default.filter(function (value) { return value.country_id === countryId; });
+    // getCityById: function (id: string): ICity {
+    //   return _findEntry(cityList, id);
+    // },
+    getStatesOfCountry: function (countryCode) {
+        var states = state_json_1.default.filter(function (value) { return value.countryCode === countryCode; });
         return states.sort(_compare);
     },
-    getCitiesOfState: function (stateId) {
-        var cities = city_json_1.default.filter(function (value) { return value.state_id === stateId; });
+    getCitiesOfState: function (stateCode) {
+        var cities = city_json_1.default.filter(function (value) { return value.stateCode === stateCode; });
         return cities.sort(_compare);
     },
     getAllCountries: function () {
