@@ -31,7 +31,7 @@ export default {
   },
   // getCityById: function (id: string): ICity {
   //   return _findEntry(cityList, id);
-  // },
+  // },x
   getStatesOfCountry: function (countryCode: string): IState[] {
     const states = stateList.filter(
       (value) => value.countryCode === countryCode
@@ -39,11 +39,12 @@ export default {
 
     return states.sort(_compare);
   },
-  // getCitiesOfState: function (stateCode: string): ICity[] {
-  //   const cities = cityList.filter((value) => value.stateCode === stateCode);
 
-  //   return cities.sort(_compare);
-  // },
+  getCitiesOfState: function (stateCode: string): ICity[] {
+    const cities = cityList.filter((value) => value.stateCode === stateCode);
+
+    return cities.sort(_compare);
+  },
   getAllCountries: function (): ICountry[] {
     return countryList;
   },
